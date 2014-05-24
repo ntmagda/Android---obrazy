@@ -1,0 +1,504 @@
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2014.4.10)  12 APR 2014 12:36
+entering extended mode
+ %&-line parsing enabled.
+**raport.tex
+(./raport.tex
+LaTeX2e <2009/09/24>
+Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
+yphenation, polish, loaded.
+(/usr/share/texmf-texlive/tex/latex/base/article.cls
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+(/usr/share/texmf-texlive/tex/latex/base/size10.clo
+File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texmf-texlive/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf-texlive/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/share/texmf-texlive/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf-texlive/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/etc/texmf/tex/latex/config/graphics.cfg
+File: graphics.cfg 2009/08/28 v1.8 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+(/usr/share/texmf-texlive/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2010/03/12 v0.04p Graphics/color for pdfTeX
+\Gread@gobject=\count87
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+(/usr/share/texmf-texlive/tex/latex/polski/polski.sty
+Package: polski 2008/02/24 v1.3.3 Polish language package
+
+Document language package `polski' v1.3.3 <2008/02/24>
+   Switching to Polish text encoding and Polish maths fonts.
+(/usr/share/texmf-texlive/tex/latex/base/ot4enc.def
+File: ot4enc.def 2005/09/27 v1.99g Standard LaTeX file
+)
+LaTeX Font Info:    Try loading font information for OT4+cmr on input line 346.
+
+
+(/usr/share/texmf-texlive/tex/latex/polski/ot4cmr.fd
+File: ot4cmr.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
+)
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT4/cmr/bx/n on input line 346.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> OT4/cmss/m/n on input line 346.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT4/cmr/m/it on input line 346.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> OT4/cmtt/m/n on input line 346.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> OT4/cmss/bx/n on input line 346.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT4/cmr/bx/it on input line 346.
+LaTeX Font Info:    Encoding `OT1' has changed to `OT4' for symbol font
+(Font)              `operators' in the math version `normal' on input line 346.
+
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT4/cmr/m/n on input line 346.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/plm/m/it on input line 346.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/plsy/m/n on input line 346.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/plex/m/n on input line 346.
+LaTeX Font Info:    Encoding `OT1' has changed to `OT4' for symbol font
+(Font)              `operators' in the math version `bold' on input line 346.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT4/cmr/bx/n on input line 346.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/plm/b/it on input line 346.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/plsy/b/n on input line 346.
+)
+(/usr/share/texmf-texlive/tex/latex/base/inputenc.sty
+Package: inputenc 2008/03/30 v1.1d Input encoding file
+\inpenc@prehook=\toks15
+\inpenc@posthook=\toks16
+
+(/usr/share/texmf-texlive/tex/latex/base/cp1250.def
+File: cp1250.def 2008/03/30 v1.1d Input encoding file
+))
+(/usr/share/texmf-texlive/tex/latex/ltxmisc/url.sty
+\Urlmuskip=\muskip10
+Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
+)
+(/usr/share/texmf-texlive/tex/latex/geometry/geometry.sty
+Package: geometry 2008/12/21 v4.2 Page Geometry
+
+(/usr/share/texmf-texlive/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2009/04/10 v2.0 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in pdf mode detected.
+)
+(/usr/share/texmf-texlive/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2008/11/04 v1.4 Switches for detecting VTeX and its modes (HO)
+Package ifvtex Info: VTeX not detected.
+)
+\Gm@cnth=\count88
+\Gm@cntv=\count89
+\c@Gm@tempcnt=\count90
+\Gm@bindingoffset=\dimen105
+\Gm@wd@mp=\dimen106
+\Gm@odd@mp=\dimen107
+\Gm@even@mp=\dimen108
+\Gm@dimlist=\toks17
+
+(/usr/share/texmf-texlive/tex/xelatex/xetexconfig/geometry.cfg))
+(/usr/share/texmf-texlive/tex/latex/graphics/color.sty
+Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+
+(/etc/texmf/tex/latex/config/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: pdftex.def on input line 130.
+)
+(/usr/share/texmf-texlive/tex/latex/listings/listings.sty
+\lst@mode=\count91
+\lst@gtempboxa=\box26
+\lst@token=\toks18
+\lst@length=\count92
+\lst@currlwidth=\dimen109
+\lst@column=\count93
+\lst@pos=\count94
+\lst@lostspace=\dimen110
+\lst@width=\dimen111
+\lst@newlines=\count95
+\lst@lineno=\count96
+\lst@maxwidth=\dimen112
+
+(/usr/share/texmf-texlive/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
+\c@lstnumber=\count97
+\lst@skipnumbers=\count98
+\lst@framebox=\box27
+)
+(/usr/share/texmf-texlive/tex/latex/listings/listings.cfg
+File: listings.cfg 2007/02/22 1.4 listings configuration
+))
+Package: listings 2007/02/22 1.4 (Carsten Heinz)
+
+(/usr/share/texmf-texlive/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2000/07/18 v2.13 AMS math features
+\@mathmargin=\skip43
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texmf-texlive/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(/usr/share/texmf-texlive/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks19
+\ex@=\dimen113
+))
+(/usr/share/texmf-texlive/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen114
+)
+(/usr/share/texmf-texlive/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count99
+LaTeX Info: Redefining \frac on input line 211.
+\uproot@=\count100
+\leftroot@=\count101
+LaTeX Info: Redefining \overline on input line 307.
+\classnum@=\count102
+\DOTSCASE@=\count103
+LaTeX Info: Redefining \ldots on input line 379.
+LaTeX Info: Redefining \dots on input line 382.
+LaTeX Info: Redefining \cdots on input line 467.
+\Mathstrutbox@=\box28
+\strutbox@=\box29
+\big@size=\dimen115
+LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
+\macc@depth=\count104
+\c@MaxMatrixCols=\count105
+\dotsspace@=\muskip11
+\c@parentequation=\count106
+\dspbrk@lvl=\count107
+\tag@help=\toks20
+\row@=\count108
+\column@=\count109
+\maxfields@=\count110
+\andhelp@=\toks21
+\eqnshift@=\dimen116
+\alignsep@=\dimen117
+\tagshift@=\dimen118
+\tagwidth@=\dimen119
+\totwidth@=\dimen120
+\lineht@=\dimen121
+\@envbody=\toks22
+\multlinegap=\skip44
+\multlinetaggap=\skip45
+\mathdisplay@stack=\toks23
+LaTeX Info: Redefining \[ on input line 2666.
+LaTeX Info: Redefining \] on input line 2667.
+)
+(/usr/share/texmf-texlive/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2004/09/05 1.3 listings language file
+) (./raport.aux
+
+LaTeX Warning: Label `simulationfigure' multiply defined.
+
+
+LaTeX Warning: Label `simulationfigure' multiply defined.
+
+
+LaTeX Warning: Label `simulationfigure' multiply defined.
+
+
+LaTeX Warning: Label `simulationfigure' multiply defined.
+
+
+LaTeX Warning: Label `simulationfigure' multiply defined.
+
+
+LaTeX Warning: Label `simulationfigure' multiply defined.
+
+
+LaTeX Warning: Label `simulationfigure' multiply defined.
+
+
+LaTeX Warning: Label `simulationfigure' multiply defined.
+
+
+LaTeX Warning: Label `simulationfigure' multiply defined.
+
+
+LaTeX Warning: Label `simulationfigure' multiply defined.
+
+
+LaTeX Warning: Label `simulationfigure' multiply defined.
+
+
+LaTeX Warning: Label `simulationfigure' multiply defined.
+
+
+LaTeX Warning: Label `simulationfigure' multiply defined.
+
+)
+\openout1 = `raport.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OT4/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+ (/usr/share/texmf-texlive/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count111
+\scratchdimen=\dimen122
+\scratchbox=\box30
+\nofMPsegments=\count112
+\nofMParguments=\count113
+\everyMPshowfont=\toks24
+\MPscratchCnt=\count114
+\MPscratchDim=\dimen123
+\MPnumerator=\count115
+\everyMPtoPDFconversion=\toks25
+)
+*geometry auto-detecting driver*
+*geometry detected driver: pdftex*
+-------------------- Geometry parameters
+paper: class default
+landscape: --
+twocolumn: --
+twoside: --
+asymmetric: --
+h-parts: 71.13188pt, 472.03123pt, 71.13188pt
+v-parts: 71.13188pt, 652.70622pt, 71.13188pt
+hmarginratio: --
+vmarginratio: --
+lines: --
+heightrounded: --
+bindingoffset: 0.0pt
+truedimen: --
+includehead: --
+includefoot: --
+includemp: --
+driver: pdftex
+-------------------- Page layout dimensions and switches
+\paperwidth  614.295pt
+\paperheight 794.96999pt
+\textwidth  472.03123pt
+\textheight 652.70622pt
+\oddsidemargin  -1.1381pt
+\evensidemargin -1.1381pt
+\topmargin  -38.1381pt
+\headheight 12.0pt
+\headsep    25.0pt
+\footskip   30.0pt
+\marginparwidth 65.0pt
+\marginparsep   11.0pt
+\columnsep  10.0pt
+\skip\footins  9.0pt plus 4.0pt minus 2.0pt
+\hoffset 0.0pt
+\voffset 0.0pt
+\mag 1000
+
+(1in=72.27pt, 1cm=28.45pt)
+-----------------------
+\c@lstlisting=\count116
+LaTeX Font Info:    Try loading font information for OML+plm on input line 64.
+(/usr/share/texmf-texlive/tex/latex/polski/omlplm.fd
+File: omlplm.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
+)
+LaTeX Font Info:    Try loading font information for OMS+plsy on input line 64.
+
+
+(/usr/share/texmf-texlive/tex/latex/polski/omsplsy.fd
+File: omsplsy.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
+)
+LaTeX Font Info:    Try loading font information for OMX+plex on input line 64.
+
+
+(/usr/share/texmf-texlive/tex/latex/polski/omxplex.fd
+File: omxplex.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
+)
+LaTeX Font Info:    External font `plex10' loaded for size
+(Font)              <10> on input line 64.
+LaTeX Font Info:    External font `plex10' loaded for size
+(Font)              <7> on input line 64.
+LaTeX Font Info:    External font `plex10' loaded for size
+(Font)              <5> on input line 64.
+ [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./raport.toc)
+\tf@toc=\write3
+\openout3 = `raport.toc'.
+
+ [1]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 105.
+
+
+(/usr/share/texmf-texlive/tex/latex/base/omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 105.
+ [2
+
+]
+<res/menu.png, id=20, 450.68375pt x 743.77875pt>
+File: res/menu.png Graphic file (type png)
+ <use res/menu.png> [3]
+Underfull \hbox (badness 10000) in paragraph at lines 191--192
+
+ []
+
+[4 <./res/menu.png (PNG copy)>]
+<res/galeria.png, id=27, 450.68375pt x 697.60625pt>
+File: res/galeria.png Graphic file (type png)
+ <use res/galeria.png>
+Underfull \hbox (badness 10000) in paragraph at lines 237--238
+
+ []
+
+[5 <./res/galeria.png (PNG copy)>]
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 239.
+
+
+(/usr/share/texmf-texlive/tex/latex/base/omlcmr.fd
+File: omlcmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <8> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 239.
+
+<res/pomoc.png, id=31, 450.68375pt x 744.7825pt>
+File: res/pomoc.png Graphic file (type png)
+ <use res/pomoc.png> [6 <./res/pomoc.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 275--276
+
+ []
+
+<res/oryginalny.png, id=37, 365.365pt x 272.01625pt>
+File: res/oryginalny.png Graphic file (type png)
+ <use res/oryginalny.png>
+Underfull \hbox (badness 10000) in paragraph at lines 296--297
+
+ []
+
+[7 <./res/oryginalny.png (PNG copy)>]
+LaTeX Font Info:    External font `plex10' loaded for size
+(Font)              <8> on input line 315.
+LaTeX Font Info:    External font `plex10' loaded for size
+(Font)              <6> on input line 315.
+
+<res/negatyw.png, id=41, 363.3575pt x 275.0275pt>
+File: res/negatyw.png Graphic file (type png)
+ <use res/negatyw.png>
+[8 <./res/negatyw.png (PNG copy)>]
+<res/grey.png, id=46, 365.365pt x 275.0275pt>
+File: res/grey.png Graphic file (type png)
+ <use res/grey.png> [9 <./res/grey.png (PNG copy)>] <res/sepia20.png, id=50, 36
+3.3575pt x 276.03125pt>
+File: res/sepia20.png Graphic file (type png)
+
+<use res/sepia20.png> [10] <res/sepia40.png, id=54, 362.35374pt x 275.0275pt>
+File: res/sepia40.png Graphic file (type png)
+
+<use res/sepia40.png> [11 <./res/sepia20.png (PNG copy)> <./res/sepia40.png (PN
+G copy)>] <res/roberts.png, id=58, 362.35374pt x 269.005pt>
+File: res/roberts.png Graphic file (type png)
+
+<use res/roberts.png> [12] [13 <./res/roberts.png (PNG copy)>]
+<res/sobel.png, id=70, 353.32pt x 270.00874pt>
+File: res/sobel.png Graphic file (type png)
+ <use res/sobel.png>
+Overfull \hbox (10.66418pt too wide) in paragraph at lines 533--534
+\OT4/cmr/m/n/10 Operacja ta po-le-ga na po-pra-wia-niu kon-tra-stu ana-li-zo-wa
+-ne-go ob-ra-zu z wy-ko-rzy-sta-niem je-go hi-sto-gra-mu.Poniewa»
+ []
+
+[14 <./res/sobel.png (PNG copy)>] [15] [16]
+<res/histokol.png, id=80, 363.3575pt x 274.02374pt>
+File: res/histokol.png Graphic file (type png)
+ <use res/histokol.png>
+<res/histogrey.png, id=81, 363.3575pt x 275.0275pt>
+File: res/histogrey.png Graphic file (type png)
+ <use res/histogrey.png>
+[17 <./res/histokol.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 702--708
+
+ []
+
+[18 <./res/histogrey.png (PNG copy)>]
+<res/skora1.png, id=89, 355.3275pt x 445.665pt>
+File: res/skora1.png Graphic file (type png)
+ <use res/skora1.png> [19]
+<res/skora2.png, id=93, 358.33875pt x 445.665pt>
+File: res/skora2.png Graphic file (type png)
+ <use res/skora2.png> [20 <./res/skora1.png (PNG copy)>]
+LaTeX Font Info:    Try loading font information for OT4+cmtt on input line 814
+.
+ (/usr/share/texmf-texlive/tex/latex/polski/ot4cmtt.fd
+File: ot4cmtt.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
+) [21 <./res/skora2.png (PNG copy)>] (./raport.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 4276 strings out of 495026
+ 55372 string characters out of 1181802
+ 373630 words of memory out of 3000000
+ 7383 multiletter control sequences out of 15000+50000
+ 16106 words of font info for 44 fonts, out of 3000000 for 9000
+ 48 hyphenation exceptions out of 8191
+ 27i,7n,40p,672b,1699s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/share/texmf-texlive/fonts/enc/dvips/pl/pltt.enc}{/usr/share/texmf-texli
+ve/fonts/enc/dvips/pl/plms.enc}{/usr/share/texmf-texlive/fonts/enc/dvips/pl/plm
+e.enc}{/usr/share/texmf-texlive/fonts/enc/dvips/pl/plrm.enc}{/usr/share/texmf-t
+exlive/fonts/enc/dvips/pl/plmi.enc}{/usr/share/texmf-texlive/fonts/enc/dvips/pl
+/plsc.enc}{/usr/share/texmf-texlive/fonts/enc/dvips/pl/plit.enc}</usr/share/tex
+mf-texlive/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-texlive/f
+onts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-texlive/fonts/type1/p
+ublic/pl/plbx10.pfb></usr/share/texmf-texlive/fonts/type1/public/pl/plbx12.pfb>
+</usr/share/texmf-texlive/fonts/type1/public/pl/plcsc10.pfb></usr/share/texmf-t
+exlive/fonts/type1/public/pl/plex10.pfb></usr/share/texmf-texlive/fonts/type1/p
+ublic/pl/plmi10.pfb></usr/share/texmf-texlive/fonts/type1/public/pl/plr10.pfb><
+/usr/share/texmf-texlive/fonts/type1/public/pl/plr12.pfb></usr/share/texmf-texl
+ive/fonts/type1/public/pl/plr5.pfb></usr/share/texmf-texlive/fonts/type1/public
+/pl/plr7.pfb></usr/share/texmf-texlive/fonts/type1/public/pl/plr8.pfb></usr/sha
+re/texmf-texlive/fonts/type1/public/pl/plsy10.pfb></usr/share/texmf-texlive/fon
+ts/type1/public/pl/plsy8.pfb></usr/share/texmf-texlive/fonts/type1/public/pl/pl
+ti12.pfb></usr/share/texmf-texlive/fonts/type1/public/pl/pltt10.pfb>
+Output written on raport.pdf (22 pages, 1662264 bytes).
+PDF statistics:
+ 158 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 71 words of extra memory for PDF output out of 10000 (max. 10000000)
+

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Picture Processing</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="negatyw">Invert</string>
+    <string name="lenna">Lenna</string>
+    <string name="tucano">Tucano</string>
+    <string name="kot">Cat</string>
+    <string name="stwor">Monster</string>
+    <string name="oryginal">Revert to original</string>
+    <string name="sepia">Sepia</string>
+    <string name="roberts">Roberts Filter</string>
+    <string name="sobel">Sobel Filter</string>
+    <string name="grey">Grey Scale</string>
+    <string name="histogram">Histogram Equalization</string>
+    <string name="histokol">Color Picture</string>
+    <string name="histogrey">Grey Scale Picture</string>
+    <string name="help">Help</string>
+    <string name="wczytaj">Choose different picture</string>
+    <string name="opis">
+    <b> Negative </b> - an operation involving the reversed colors. \n\n
+    <b> Shades of gray </b> - The shade of gray image. Each channel RG and B accumulated and divided by 3 \n\n
+    <b> Sepia </b> - It is an operation involving softer colors simulating the old yellowed photo. Depending on the factor W the intensity of the operation is changing \n\n
+    <b> Roberts filter </b> - is one of the first edge detectors . The edge is determined as the maximum of the first derivative . The gradient is a vector, which is approximated by finite differences : \n\n
+    <b> Sobel Filter </b> - edge is seen here  as the maximum gradient. To reduce the impact of noise in the averaged value of the vertical ( horizontal with a gradient ) and horizontal (with a vertical gradient ) with the applied weights for older direction passing through the point analyzed . \n\n
+    <b>Histogram normalization</b> Aligning the histogram is based on the change of image points to the histogram with equal number of image points is approximately the same. This operation allows you to bring out low-contrast details in the image . \n\n
+    </string>
+    <string name="title_activity_help">Help</string>
+
+
+
+</resources>

@@ -1,0 +1,37 @@
+\contentsline {section}{\numberline {1}Temat zadania}{2}
+\contentsline {section}{\numberline {2}Proponowane rozwi\k azanie}{2}
+\contentsline {subsection}{\numberline {2.1}Krok 1: Szkielet aplikacji}{2}
+\contentsline {subsubsection}{\numberline {2.1.1}Czynno\'sci}{2}
+\contentsline {subsubsection}{\numberline {2.1.2}Rezultat}{4}
+\contentsline {subsection}{\numberline {2.2}Krok 2: Wczytywanie zdj\k ecia z galerii}{4}
+\contentsline {subsubsection}{\numberline {2.2.1}Czynno\'sci}{4}
+\contentsline {subsubsection}{\numberline {2.2.2}Rezultat}{5}
+\contentsline {subsection}{\numberline {2.3}Krok 3: Opis funkcji}{5}
+\contentsline {subsubsection}{\numberline {2.3.1}Czynno\'sci}{6}
+\contentsline {subsubsection}{\numberline {2.3.2}Rezultat}{6}
+\contentsline {subsection}{\numberline {2.4}Krok 4: Przywracanie orygina\IeC {\l }u}{7}
+\contentsline {subsubsection}{\numberline {2.4.1}Czynno\'sci}{7}
+\contentsline {subsubsection}{\numberline {2.4.2}Orygina\IeC {\l }}{7}
+\contentsline {subsection}{\numberline {2.5}Krok 5: Konwersja na negatyw}{8}
+\contentsline {subsubsection}{\numberline {2.5.1}Czynno\'sci}{8}
+\contentsline {subsubsection}{\numberline {2.5.2}Rezultat}{8}
+\contentsline {subsection}{\numberline {2.6}Krok 6: Konwersja obrazu na odcienie szaro\'sci}{9}
+\contentsline {subsubsection}{\numberline {2.6.1}Czynno\'sci}{9}
+\contentsline {subsubsection}{\numberline {2.6.2}Rezultat}{9}
+\contentsline {subsection}{\numberline {2.7}Krok 7: Konwersja obrazu na sepi\k e ze wsp\'o\IeC {\l }czynnikiem W=20 oraz W=40}{9}
+\contentsline {subsubsection}{\numberline {2.7.1}Czynno\'sci}{10}
+\contentsline {subsubsection}{\numberline {2.7.2}Rezultat}{11}
+\contentsline {subsection}{\numberline {2.8}Krok 8: Detekcji kraw\k edzi za pomoc\k a krzy\.za Robertsa}{12}
+\contentsline {subsubsection}{\numberline {2.8.1}Czynno\'sci}{12}
+\contentsline {subsubsection}{\numberline {2.8.2}Rezultat}{13}
+\contentsline {subsection}{\numberline {2.9}Krok 9: Filtr Sobela}{13}
+\contentsline {subsubsection}{\numberline {2.9.1}Czynno\'sci}{13}
+\contentsline {subsubsection}{\numberline {2.9.2}Rezultat}{14}
+\contentsline {subsection}{\numberline {2.10}Krok 10: Wyr\'ownanie histogramu dla obrazu kolrowego i w odcieniach szaro\'sci}{14}
+\contentsline {subsubsection}{\numberline {2.10.1}Czynno\'sci}{14}
+\contentsline {subsubsection}{\numberline {2.10.2}Rezultat}{17}
+\contentsline {subsection}{\numberline {2.11}Krok 11: Wykrywanie sk\'ory}{18}
+\contentsline {subsubsection}{\numberline {2.11.1}Czynno\'sci}{18}
+\contentsline {subsubsection}{\numberline {2.11.2}Rezultat}{20}
+\contentsline {section}{\numberline {3}Wnioski}{21}
+\contentsline {section}{Literatura}{21}

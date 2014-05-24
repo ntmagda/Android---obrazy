@@ -1,0 +1,816 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{polski}
+\usepackage[cp1250]{inputenc}
+\usepackage{url}
+\usepackage[margin=2.5cm]{geometry} %layout
+% the following is needed for syntax highlighting
+\usepackage{color}
+\usepackage{listings} % needed for the inclusion of source code
+\usepackage{amsmath}
+
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{%
+  language=Java,                  % the language of the code
+  basicstyle=\footnotesize,       % the size of the fonts that are used for the code
+  numbers=left,                   % where to put the line-numbers
+  numberstyle=\tiny\color{gray},  % the style that is used for the line-numbers
+  stepnumber=1,                   % the step between two line-numbers. If it's 1, each line 
+                                  % will be numbered
+  numbersep=5pt,                  % how far the line-numbers are from the code
+  backgroundcolor=\color{white},  % choose the background color. You must add \usepackage{color}
+  showspaces=false,               % show spaces adding particular underscores
+  showstringspaces=false,         % underline spaces within strings
+  showtabs=false,                 % show tabs within strings adding particular underscores
+  frame=single,                   % adds a frame around the code
+  rulecolor=\color{black},        % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. commens (green here))
+  tabsize=4,                      % sets default tabsize to 2 spaces
+  captionpos=b,                   % sets the caption-position to bottom
+  breaklines=true,                % sets automatic line breaking
+  breakatwhitespace=false,        % sets if automatic breaks should only happen at whitespace
+  title=\lstname,                 % show the filename of files included with \lstinputlisting;
+                                  % also try caption instead of title
+  keywordstyle=\color{blue},          % keyword style
+  commentstyle=\color{dkgreen},       % comment style
+  stringstyle=\color{mauve},         % string literal style
+  escapeinside={\%*}{*)},            % if you want to add a comment within your code
+  morekeywords={*,...}               % if you want to add more keywords to the set
+}
+
+\begin{document}
+
+\begin{titlepage}
+\begin{center}
+
+\textsc{\LARGE Programowanie urz¹dzeñ mobilnych pod k¹tem zastosowañ biometrycznych}\\[1.5cm]
+
+\vskip 3cm
+
+\textsc{\Large Sprawozdanie I}\\[0.5cm]
+
+{ \huge \bfseries Temat: Aplikacja wykonuj¹ca operacje na obrazach \\[0.4cm] }
+
+\vskip 6cm
+% Author and supervisor
+\begin{minipage}{0.4\textwidth}
+\begin{flushleft} \large
+\emph{Autor:}\\
+Magda Nowak-Trzos
+\end{flushleft}
+\end{minipage}
+\begin{minipage}{0.4\textwidth}
+\begin{flushright} \large
+\emph{Prowadz¹cy æwiczenia:} \\
+mgr Krzysztof Misztal
+\end{flushright}
+\end{minipage}
+
+\vfill
+
+% Bottom of the page
+{\large Kraków, \today
+}
+
+\end{center}
+\end{titlepage}
+
+\tableofcontents
+\clearpage
+
+\section{Temat zadania}
+Tematem zadania jest napisanie aplikacji na platformê Android wykonuj¹cej ni¿ej wymienione operacje na obrazach wraz z któtkim opisem ka¿dej z nich: \\*\\*
+	-  konwersja obrazu na negatyw\\
+	-  konwersja obrazu na odcienie szaroœci\\
+	-  konwersja obrazu na sepiê ze wspó³czynnikiem W=20 oraz W=40\\
+	-  detekcja krawêdzi za pomoc¹ krzy¿a Robertsa\\
+	-  detekcja krawêdzi za pomoc¹ operatora Sobela\\
+	-  normalizacja histogramu dla obrazu kolrowego i obrazu w odcieniach szaroœci \\
+	-  wykrywanie skóry metod¹ 1
+	-  wykrywanie skóry metod¹ 2 
+
+\section{Proponowane rozwi¹zanie}
+Aplikacja z u¿yciem Action Bar'a, umozliwiaj¹ca u¿ytkownikowi wybór konktretnej operacji wykonywanej na obrazie. Z menu mo¿na równie¿ wczytaæ konkretny obrazek z bazy aplikacji i wykonaæ na nim wybran¹ operacjê. W g³ownym oknie aplikacji, w centrum znajduje siê przerabiany obraz, poni¿ej 2 przyciski. Jeden umo¿liwiaj¹cy przywrócenie orygina³u, drugi wyœwietlaj¹cy krótki opis ka¿dej z operacji. Aplikacja umo¿liwia tak¿e wczytanie zdjêcia z galerii - po klikniêciu w obraz - oraz wykonanie na nim ka¿dej z operacji. Ponadto aplikacja zosta³a przystosowana do pracy na ró¿nych urz¹dzeniach, oraz w dwóch wersjach jêzykowych - polskiej i angielskiej. 
+
+
+\subsection{Krok 1: Szkielet aplikacji}
+Na pocz¹tek wykona³am szkielet aplikacji. Umieœci³am przyk³adowy obrazek w œrodku okna aplikacji oraz stworzy³am Action Bar - menu aplikacji. Ka¿da z operacji wykonuje siê po klikniêciu w odpowieni przycisk menu. Ponadto dla takich opcji jak Sepia, wyrównanie histogramu czy wczytanie nowego obrazka uruchamia siê dodatkowe pod- menu wyboru dotycz¹ce dok³adnego wyboru rodzaju operacji.  
+
+\subsubsection{Czynnoœci}
+Kod menu:  
+\begin{lstlisting}
+ public boolean onOptionsItemSelected(MenuItem item) {
+        ImageView iv = (ImageView) findViewById(R.id.imageView); // wczytanie obrazu
+        Bitmap sourceBitmap = ((BitmapDrawable) iv.getDrawable()).getBitmap(); // zamiana obrazu na bitmape
+        switch(item.getItemId())
+        {
+
+            case R.id.negatyw: // wykonanie operacji negatyw
+                iv.setImageBitmap(Negatyw(sourceBitmap));
+                break;
+            case R.id.grey:
+                iv.setImageBitmap(Grey(sourceBitmap));// Odcienie szarosci
+                break;
+            case R.id.sepia20:
+                iv.setImageBitmap(Sepia(sourceBitmap,20)); // Sepia z wspolczynnikiem 20 
+                break;
+            case R.id.sepia40:
+                iv.setImageBitmap(Sepia(sourceBitmap,40)); // Sepia z wspolczynnikiem 40 
+                break;
+            case R.id.roberts:
+                iv.setImageBitmap(Roberts(sourceBitmap)); // Filtr Robertsa
+                break;
+            case R.id.sobel:
+                iv.setImageBitmap(Sobel(sourceBitmap)); // Filtr Sobela
+                break;
+            case R.id.histokol:
+                iv.setImageBitmap(HistoKol(sourceBitmap)); // wyrównanie histogramu dla obrazu kolorowego 
+                break;
+            case R.id.histogrey:
+                iv.setImageBitmap(HistoGrey(sourceBitmap)); // wyrównanie histogramu dla obrazu w odcieniach szaroœci 
+                break;
+            case R.id.wykrywanie1:
+                iv.setImageBitmap(WykrywanieSkory1(sourceBitmap)); // wykrywanie skóry metod¹ pierwsz¹
+                break;
+            case R.id.wykrywanie2:
+                iv.setImageBitmap(WykrywanieSkory2(sourceBitmap)); // wykrywanie skóry metod¹ drug¹
+                break;
+            case R.id.lenna1: // wczytanie obrazka Lenna
+                ImageView iv4 = (ImageView) findViewById(R.id.lennaim);
+                oryginal = ((BitmapDrawable) iv4.getDrawable()).getBitmap();
+                Bitmap lenna = ((BitmapDrawable) iv4.getDrawable()).getBitmap();
+                iv.setImageBitmap(lenna);
+                break;
+            case R.id.stwor: //wczytanie obrazka Stwór
+                ImageView iv3 = (ImageView) findViewById(R.id.stworim);
+                oryginal = ((BitmapDrawable) iv3.getDrawable()).getBitmap();
+                Bitmap stwor = ((BitmapDrawable) iv3.getDrawable()).getBitmap();
+                iv.setImageBitmap(stwor);
+                break;
+            case R.id.kot: //wczytanie obrazka Kot
+                ImageView iv2 = (ImageView) findViewById(R.id.kotim);
+                oryginal = ((BitmapDrawable) iv2.getDrawable()).getBitmap();
+                Bitmap kot = ((BitmapDrawable) iv2.getDrawable()).getBitmap();
+                iv.setImageBitmap(kot);
+                break;
+            case R.id.tucan: //wczytanie obrazka Tucan 
+                ImageView iv5 = (ImageView) findViewById(R.id.tucanim);
+                oryginal = ((BitmapDrawable) iv5.getDrawable()).getBitmap();
+                Bitmap tucano = ((BitmapDrawable) iv5.getDrawable()).getBitmap();
+                iv.setImageBitmap(tucano);
+                break;
+
+            case R.id.kobieta1: // wczytanie obrazka Kobieta
+                ImageView iv6 = (ImageView) findViewById(R.id.kobietaim);
+                oryginal = ((BitmapDrawable) iv6.getDrawable()).getBitmap();
+                Bitmap kobieta = ((BitmapDrawable) iv6.getDrawable()).getBitmap();
+                iv.setImageBitmap(kobieta);
+                break;
+        }
+
+
+        int id = item.getItemId();
+        return super.onOptionsItemSelected(item);
+    }
+
+\end{lstlisting}
+
+\subsubsection{Rezultat}
+\begin{center}
+    \centering
+    \includegraphics[scale=0.5]{res/menu.png}
+    \\MENU\\
+    \label{simulationfigure}
+\end{center}
+
+
+\subsection{Krok 2: Wczytywanie zdjêcia z galerii}
+Klikaj¹c w obraz otwiera siê menu daj¹ce mo¿liwoœæ wyboru u¿ytkownikowi sk¹d wczyta obraz. Po wybraniu galerii i klikniêciu w konkretny obraz, jest on przesy³any do aplikacj i mo¿na na nim wykonywaæ ju¿ wszystkie operacje.\\*
+
+\subsubsection{Czynnoœci}
+Kod odpowiadaj¹cy z wybór zdjêcia z galerii: (jest on uruchamiany po klikniêciu z obraz)
+\begin{lstlisting}
+public void Galeria(View view) {
+
+        Intent gallery = new Intent(); // nowe okno
+        gallery.setType("image/*"); // jaki typ danych wczytywany
+        gallery.setAction(Intent.ACTION_GET_CONTENT); // ustawienie akcji
+        startActivityForResult(Intent.createChooser(gallery,"Select Image"),1); // uruchomienie dodatkowego menu wyboru
+
+    }
+
+    public void onActivityResult(int requestCode , int resultCode, Intent data)
+    {
+
+        if(resultCode  == RESULT_OK) // jezeli wybrano obrazek
+        {
+            if(requestCode ==1)
+            {
+                image.setImageURI(data.getData()); // ustawianie obrazka 
+                obraz = ((BitmapDrawable) image.getDrawable()).getBitmap(); 
+                oryginal= ((BitmapDrawable) image.getDrawable()).getBitmap(); // ustawienie oryginalu
+                ImageView iv = (ImageView) findViewById(R.id.imageView);
+                Bitmap sourceBitmap = ((BitmapDrawable) iv.getDrawable()).getBitmap();
+                iv.setImageBitmap(obraz);
+            }
+        }
+    }
+    
+\end{lstlisting}
+
+\subsubsection{Rezultat}
+\begin{center}
+    \centering
+    \includegraphics[scale=0.5]{res/galeria.png}
+    \\Wybór Ÿród³a pobrania obrazu\\
+    \label{simulationfigure}
+\end{center}
+
+
+\subsection{Krok 3: Opis funkcji}
+Kolejnym krokiem by³o stworzenie nowej klasy Help, odpowiedzialnej za nowe okno, w którym umieœci³am opis wszystkich u¿ywanych funkcji. Pondato, poniewa¿ tekst by³ zbyt d³ugi doda³am ScrollView tak aby mo¿na go by³o przewijaæ.
+
+\subsubsection{Czynnoœci}
+Kod odpowiedzialny za wyswietlenie opisu funkcji\\* \\*
+\begin{lstlisting}
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/opis"
+        android:id="@+id/textView"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:singleLine="false"
+        />
+    </ScrollView>
+\end{lstlisting}
+
+\subsubsection{Rezultat}
+\begin{center}
+    \centering
+    \includegraphics[scale=0.5]{res/pomoc.png}
+    \\Zdjêcie oryginalne\\
+    \label{simulationfigure}
+\end{center}
+
+
+
+\subsection{Krok 4: Przywracanie orygina³u}
+Po wykonaniu operacji na obrazie przycisk "Przywracanie orygina³u" umo¿liwia u¿ytkownikowi ponowne wczytanie przerabianego obrazu, ale bez ¿adnych modyfikacji. 
+Podczas wczytywania obrazu do aplikacji, w polu 
+\begin{lstlisting}
+Bitmap oryginal;
+\end{lstlisting}
+
+zapisywany jest wczytany obraz. Po klikniêciu w przycisk przywracania orygina³u ustawiany jest w³aœnie ten obraz który wczeœniej zosta³ zapisany jako orygina³.
+
+\subsubsection{Czynnoœci}
+Kod odpowiedzialny za ustawienie orygina³u: \\* \\*
+\begin{lstlisting}
+public void Oryginal(View v) {
+
+      ImageView iv = (ImageView) findViewById(R.id.imageView);
+      Bitmap sourceBitmap = ((BitmapDrawable) iv.getDrawable()).getBitmap();
+      iv.setImageBitmap(oryginal);
+}
+\end{lstlisting}
+
+
+
+\subsubsection{Orygina³}
+\begin{center}
+    \centering
+    \includegraphics[scale=1.2]{res/oryginalny.png}
+    \\Zdjêcie oryginalne\\
+    \label{simulationfigure}
+\end{center}
+
+
+\textsc{\Large \\*\\* Implementacja metod wykonuj¹cych operacje na obrazie:}\\[0.5cm]
+
+ 
+\subsection{Krok 5: Konwersja na negatyw}
+Konwersja na negatyw polega na odwróceniu wartoœci ka¿dego kana³u R G i B dla poszczególnych pikseli. W mojej metodzie tworzê nowy obraz wyjœciowy o takich samych rozmiarach jak obraz wejœciowy i zapisuje dla ka¿dego z jego pikeli odpowiedni¹ wartoœc korzystaj¹c z wartoœci obrazka wejœciowego. 
+
+\subsubsection{Czynnoœci}
+Kod metody realizuj¹cej konwersjê na negatyw 
+\begin{lstlisting}
+   public Bitmap Negatyw(Bitmap src) {
+        Bitmap bmOut = Bitmap.createBitmap(src.getWidth(), src.getHeight(), src.getConfig());
+        int A, R, G, B;
+        int pixelColor;
+        int height = src.getHeight();
+        int width = src.getWidth();
+        for (int y = 0; y < height; y++) {
+            for (int x = 0; x < width; x++) {
+                pixelColor = src.getPixel(x, y);
+                A = Color.alpha(pixelColor);
+                R = 255 - Color.red(pixelColor);
+                G = 255 - Color.green(pixelColor);
+                B = 255 - Color.blue(pixelColor);
+                bmOut.setPixel(x, y, Color.argb(A, R, G, B));
+            }
+        }
+        return bmOut;
+    }
+\end{lstlisting}
+
+\subsubsection{Rezultat}
+\begin{center}
+    \centering
+    \includegraphics[scale=0.8]{res/negatyw.png}
+    \\Obrazek po zastosowaniu konwersji na negatyw
+    \label{simulationfigure}
+\end{center}
+
+\subsection{Krok 6: Konwersja obrazu na odcienie szaroœci}
+Konwersja obrazu na odcienie szaroœci polega na ustawieniu wartoœci ka¿dego kana³u R G i B na tak¹ sam¹ - równ¹ œredniej arytmetycznej kana³ów R G i B z obrazu wejœciowego 
+
+\subsubsection{Czynnoœci}
+Kod metody realizuj¹cej konwersjê na obrazu na odcienie szaroœci
+\begin{lstlisting}
+    public Bitmap Gray(Bitmap src) {
+        Bitmap bmOut = Bitmap.createBitmap(src.getWidth(), src.getHeight(), src.getConfig());
+        int Z;
+        int pixelColor;
+        int height = src.getHeight();
+        int width = src.getWidth();
+        for (int y = 0; y < height; y++) {
+            for (int x = 0; x < width; x++) {
+                pixelColor = src.getPixel(x, y);
+                Z = (Color.red(pixelColor) +Color.green(pixelColor)+Color.blue(pixelColor))/3;
+                bmOut.setPixel(x, y, Color.rgb(Z, Z, Z));
+            }
+        }
+        return bmOut;
+    }
+\end{lstlisting}
+
+\subsubsection{Rezultat}
+\begin{center}
+    \centering
+    \includegraphics[scale=0.9]{res/grey.png}
+    \\Konwersja na odcienie szaroœci
+    \label{simulationfigure}
+\end{center}
+
+\subsection{Krok 7: Konwersja obrazu na sepiê ze wspó³czynnikiem W=20 oraz W=40}
+Konwersja obrazu na sepiê polega na 
+
+\subsubsection{Czynnoœci}
+Kod metody realizuj¹cej konwersjê na sepiê z zadanym wspó³czynnikiem polega na dodaniu do kana³u czerwonego podwojonej wartoœci wspó³czynnika, a do kana³u zielonego wartoœci równej wartoœci wspó³czynnika. W zale¿noœci od wspó³czynnika sepia jest s³absza lub mocniejsza. Moja metoda jako argument przyjmuje wspó³czynnik. W aplikacji zastosowa³am sepiê o wsp = 20 i 40.
+\begin{lstlisting}
+
+    public Bitmap Sepia(Bitmap src, int wsp) {
+         Bitmap bmOut = Bitmap.createBitmap(src.getWidth(), src.getHeight(), src.getConfig());
+        int R, G, B,A;
+        int pixelColor;
+        int height = src.getHeight();
+        int width = src.getWidth();
+        for (int y = 0; y < height; y++) {
+            for (int x = 0; x < width; x++) {
+                 pixelColor = src.getPixel(x, y);
+                A = Color.alpha(pixelColor);
+                R = Color.red(pixelColor)+2*wsp;
+                G = Color.green(pixelColor)+wsp;
+                B = Color.blue(pixelColor);
+                if(R>255)
+                {
+                    R=255;
+                }
+                if(B>255)
+                {
+                    B=255;
+                }
+                if(G>255)
+                {
+                    G=255;
+                }
+                bmOut.setPixel(x, y, Color.argb(A, R, G, B));
+            }
+        }
+        return bmOut;
+    }
+
+\end{lstlisting}
+
+\subsubsection{Rezultat}
+\begin{center}
+    \centering
+    \includegraphics[scale=1.0]{res/sepia20.png}
+    \\Sepia ze wspó³czynnikiem W=20\\
+    \label{simulationfigure}
+\end{center}
+\begin{center}
+    \centering
+    \includegraphics[scale=1.0]{res/sepia40.png}
+    \\Sepia ze wspó³czynnikiem W=40
+    \label{simulationfigure}
+\end{center}
+
+\subsection{Krok 8: Detekcji krawêdzi za pomoc¹ krzy¿a Robertsa}
+Detekcja krawêdzi za pomoc¹ krzy¿a Robertsa polega na w pierwszym kroku na konwolucji z dwoma maskami 2x2 \begin{equation*}
+G_{1} =
+\begin{pmatrix}
+0 & 1\\
+-1 & 0
+\end{pmatrix}
+\end{equation*}
+
+oraz
+
+\begin{equation*}
+G_{2} =
+\begin{pmatrix}
+1 & 0\\
+0 & -1
+\end{pmatrix}
+\end{equation*}
+
+Krok drugi polega na zamianie pola wektorowego na pole skalarne korzystaj¹c ze wzoru:
+\begin{equation}
+I(x,y) = \sqrt{G^2_{1}+G^2_{2}}
+\end{equation}
+
+\subsubsection{Czynnoœci}
+Metoda realizuj¹ca filtr Robertsa:
+\begin{lstlisting}
+    public Bitmap Roberts(Bitmap src) {
+        Bitmap bmOut = Bitmap.createBitmap(src.getWidth(), src.getHeight(), src.getConfig());
+        int height = src.getHeight();
+        int width = src.getWidth();
+        for (int y = 3; y < height-3; y++) {
+            for (int x = 3; x < width-3; x++) {
+                int p3=Color.red(src.getPixel(x + 1, y));
+                int p4=Color.red(src.getPixel(x + 1, y + 1));
+                int p5=Color.red(src.getPixel(x, y + 1));
+
+                int gg = Math.abs(Color.red(src.getPixel(x,y))- p4)+Math.abs(p3-p5);
+                if(gg > 255) gg = 255;
+                bmOut.setPixel(x, y, Color.rgb(gg, gg, gg));
+            }
+        }
+        return bmOut;
+    }
+\end{lstlisting}
+
+\subsubsection{Rezultat}
+\begin{center}
+    \centering
+    \includegraphics[scale=1.0]{res/roberts.png}
+    \\Obrazek po filtrze Robertsa
+    \label{simulationfigure}
+\end{center}
+
+\subsection{Krok 9: Filtr Sobela}
+Pierwszym krokiem algorytmy jest konwolucja z dwoma maskami 3x3:
+\begin{equation*}
+G_{1} =
+\begin{pmatrix}
+-1 & 0 & 0\\
+-2 & 0 & 2\\
+-1 & 0 & 1\\
+\end{pmatrix}
+\end{equation*}
+oraz
+\begin{equation*}
+G_{2} =
+\begin{pmatrix}
+1 & 2 & 1\\
+0 & 0 & 0\\
+-1 & -2 & -1\\
+\end{pmatrix}
+\end{equation*}
+Nastêpnie stosuj¹c poni¿szy wzór wykonujemy zamianê pola wektorowego na skalarne:
+\begin{equation}
+I(x,y) = \sqrt{G^2_{1}+G^2_{2}}
+\end{equation}
+
+\subsubsection{Czynnoœci}
+Metoda realizuj¹ca filtr Sobela
+\begin{lstlisting}
+  public Bitmap Sobel(Bitmap src) {
+        Bitmap bmOut = Bitmap.createBitmap(src.getWidth(), src.getHeight(), src.getConfig());
+        int height = src.getHeight();
+        int width = src.getWidth();
+        for (int y = 3; y < height-3; y++) {
+            for (int x = 3; x < width-3; x++) {
+                        int p0=Color.red(src.getPixel(x - 1, y - 1));
+                        int p1=Color.red(src.getPixel(x, y - 1));
+                        int p2=Color.red(src.getPixel(x + 1, y - 1));
+                        int p3=Color.red(src.getPixel(x + 1, y));
+                        int p4=Color.red(src.getPixel(x + 1, y + 1));
+                        int p5=Color.red(src.getPixel(x, y + 1));
+                        int p6=Color.red(src.getPixel(x - 1, y + 1));
+                        int p7=Color.red(src.getPixel(x - 1, y));
+                        int xxg = ((p2+2*p3+p4)-(p0+2*p7+p6));
+                        int yyg = ((p6+2*p5+p4)-(p0+2*p1+p2));
+                        int g = (int) Math.hypot(xxg,yyg);
+                        if(g > 255) g = 255;
+                        bmOut.setPixel(x, y, Color.rgb(g, g, g));
+            }
+        }
+     return bmOut;
+    }
+\end{lstlisting}
+
+\subsubsection{Rezultat}
+\begin{center}
+    \centering
+    \includegraphics[scale=1.0]{res/sobel.png}
+    \\Obrazek po filtrze Sobela
+    \label{simulationfigure}
+\end{center}
+
+\subsection{Krok 10: Wyrównanie histogramu dla obrazu kolrowego i w odcieniach szaroœci}
+Operacja ta polega na poprawianiu kontrastu analizowanego obrazu z wykorzystaniem jego histogramu.Poniewa¿ w operacjach bezkontaksotwych: "Wszystkie piksele o jednakowej intensywnoœci s¹ traktowane identycznie" wiêc nie warto wyznaczaæ nowej wartoœci piksela za ka¿dym razem. Dlatego dla zoptymalizowania algorytmu wykrozysta³am tablicê LUT. 
+\subsubsection{Czynnoœci}
+Wyrównanie histogramu dla obrazu kolrowego
+\begin{lstlisting}
+ public Bitmap HistoKol(Bitmap src) {
+        Bitmap bmOut = Bitmap.createBitmap(src.getWidth(), src.getHeight(), src.getConfig());
+        int height = src.getHeight();
+        int width = src.getWidth();
+        int l_arrRed[] = new int[256];
+        int l_arrGreen[] = new int[256];
+        int l_arrBlue[] = new int[256];
+        for (int x = 0; x < width; x++) {
+            for (int y = 0; y < height; y++) {
+                l_arrRed[Color.red(src.getPixel(x, y))]++; // zlicza piksele w jednym kolorze
+                l_arrGreen[Color.green(src.getPixel(x, y))]++;
+                l_arrBlue[Color.blue(src.getPixel(x, y))]++;
+            }
+        }
+        double w=width*height;
+
+        double[] DRed= new double[256];
+        for( int i =0; i < 256; i++)
+        {
+            int zmienna=l_arrRed[0];
+            for( int k=0; k <i+1; k++)
+            {
+                zmienna+=l_arrRed[k];
+            }
+            System.out.println(zmienna);
+
+            DRed[i] = zmienna/w;
+        }
+
+        double[] DGreen= new double[256];
+        for( int i =0; i < 256; i++)
+        {
+            int zmienna=l_arrRed[0];
+            for( int k=0; k <i+1; k++)
+            {
+                zmienna+=l_arrRed[k];
+            }
+            DGreen[i] = zmienna/w;
+        }
+
+        double[] DBlue= new double [256];
+        for( int i =0; i < 256; i++)
+        {
+            int zmienna=l_arrRed[0];
+            for( int k=0; k <i+1; k++)
+            {
+                zmienna+=l_arrRed[k];
+            }
+            DBlue[i] = zmienna/w;
+        }
+
+        int n = 0;
+        while(DRed[n]<=0)
+        {
+            n=n+1;
+        }
+        double minDRed = DRed[n];
+
+        int k = 0;
+        while(DBlue[k]<=0)
+        {
+            k=k+1;
+        }
+        double minDBlue = DBlue[k];
+
+        int j = 0;
+        while(DGreen[j]<=0)
+        {
+            j=j+1;
+        }
+        double minDGreen = DGreen[j];
+
+
+        int[] lutR = new int[256];
+        int[] lutG = new int[256];
+        int[] lutB = new int[256];
+        for(int i = 0 ;i<256;++i){
+            lutR[i]=(int) Math.floor(((DRed[i]-minDRed)/(1-minDRed))*255);
+            lutG[i]=(int) Math.floor(((DGreen[i]-minDGreen)/(1-minDGreen))*255);
+            lutB[i]=(int) Math.floor(((DBlue[i]-minDBlue)/(1-minDBlue))*255);
+
+        }
+        int r, g, b;
+        for (int x = 0; x <width; x++) {
+            for (int y = 0; y < height; y++) {
+                r = lutR[Color.red(src.getPixel(x, y))];
+                g = lutG[Color.green(src.getPixel(x, y))];
+                b = lutB[Color.blue(src.getPixel(x, y))];
+                bmOut.setPixel(x, y, Color.rgb(r, g, b));
+            }
+        }
+        // return final bitmap
+        return bmOut;
+    }
+
+
+\end{lstlisting}
+Wyrównanie histogramu dla obrazu w odcieniach szaroœci.
+\begin{lstlisting}
+    public Bitmap HistoGray(Bitmap src) {
+        Bitmap bmOut = Bitmap.createBitmap(src.getWidth(), src.getHeight(), src.getConfig());
+        int height = src.getHeight();
+        int width = src.getWidth();
+        int l_arr[] = new int[256];
+        for (int x = 0; x < width; x++) {
+            for (int y = 0; y < height; y++) {
+                l_arr[Color.red(src.getPixel(x, y))]++; // zlicza piksele w jednym kolorze
+            }
+        }
+        double w=width*height;
+
+        double[] D= new double[256];
+        for( int i =0; i < 256; i++)
+        {
+            int zmienna=l_arr[0];
+            for( int k=0; k <i+1; k++)
+            {
+                zmienna+=l_arr[k];
+            }
+            System.out.println(zmienna);
+
+            D[i] = zmienna/w;
+        }
+        int n = 0;
+        while(D[n]<=0)
+        {
+            n=n+1;
+        }
+        double minD = D[n];
+
+        int[] lut = new int[256];
+        for(int i = 0 ;i<256;++i){
+            lut[i]=(int) Math.floor(((D[i]-minD)/(1-minD))*255);
+        }
+        int z;
+        for (int x = 0; x <width; x++) {
+            for (int y = 0; y < height; y++) {
+                z = lut[Color.red(src.getPixel(x,y))];
+                bmOut.setPixel(x, y, Color.rgb(z, z, z));
+            }
+        }
+        // return final bitmap
+        return bmOut;
+    }
+
+
+\end{lstlisting}
+\subsubsection{Rezultat}
+\begin{center}
+    \centering
+    \includegraphics[scale=1.0]{res/histokol.png}
+    \\Wyrównanie histogramu dla obrazka kolorowego 
+    \label{simulationfigure}
+\end{center}
+\begin{center}
+    \centering
+    \includegraphics[scale=1.0]{res/histogrey.png}
+    \\Wyrównanie histogramu dla obrazka w odcieniach szaroœci
+    \label{simulationfigure}
+\end{center}
+
+
+
+
+\subsection{Krok 11: Wykrywanie skóry}
+Wykrywanie skory mozna wykonac na wiele sposobow. Ja w mojej aplikacji zaimplementowa³am dwa z nich. Pierwszy polega na zastosowaniu poni¿szego algorytmu:\\
+\\   - Dla ka¿dego piksela oryginalnego obrazka (koloroweg) usuwa siê kana³y czerwony i zielony.
+  \\ - Wykonuje siê operacjê odjêcia kana³u zielonego od czerwonego.
+  \\ - Jeœli uzyskany wynik jest ujemny, do nowego obrazka, w miejscu odpowiadaj¹cym analizowanemu pikselowi, podstawia siê wartoœæ 0 do wszystkich kana³ów kolorów.
+ \\  - W przeciwnym razie w miejscu odpowiadaj¹cym analizowanemu pikselowi, podstawia siê wartoœæ ró¿nicy do wszystkich kana³ów kolorów.
+   \\- W ten sposób uzyskuje siê obraz w odcieniach szaroœci, który nastêpnie binaryzuje siê z progiem równym 30 
+
+\subsubsection{Czynnoœci}
+Kod metody realizuj¹cej wykrywanie skory 
+\begin{lstlisting}
+   public Bitmap WykrywanieSkory1(Bitmap src) {
+        Bitmap bmOut = Bitmap.createBitmap(src.getWidth(), src.getHeight(), src.getConfig());
+        int A, R, G, B;
+        int pixelColor;
+        int height = src.getHeight();
+        int width = src.getWidth();
+        for (int y = 0; y < height; y++) {
+            for (int x = 0; x < width; x++) {
+                pixelColor = src.getPixel(x, y);
+                A = Color.alpha(pixelColor);
+                R = Color.red(pixelColor)-Color.green(pixelColor);
+                G = Color.red(pixelColor)-Color.green(pixelColor);
+                B = Color.red(pixelColor)-Color.green(pixelColor);
+                if(R<0)
+                {
+                    R=B=G=0;
+                }
+                else if(R>255)
+                {
+                    R=B=G=255;
+                }
+
+
+                if(R>30 && G>30 && B>30)
+                {
+                    R=G=B=255;
+                }
+                if(R<30 && G<30 && B<30)
+                {
+                    R=G=B=0;
+                }
+                bmOut.setPixel(x, y, Color.argb(A, R, G, B));
+            }
+        }
+        return bmOut;
+    }
+
+\end{lstlisting}
+
+Algorytm drugi - polega na ustawieniu wartosci kana³u R G i B na 255 dla pikseli spe³niaj¹cych okreœlone warunki.
+
+\begin{lstlisting}
+
+    public Bitmap WykrywanieSkory2(Bitmap src) {
+        Bitmap bmOut = Bitmap.createBitmap(src.getWidth(), src.getHeight(), src.getConfig());
+        int A, R, G, B;
+        int pixelColor;
+        int height = src.getHeight();
+        int width = src.getWidth();
+
+		for (int y = 0; y < height; y++) {
+            for (int x = 0; x < width; x++) {
+                pixelColor = src.getPixel(x, y);
+                A = Color.alpha(pixelColor);
+                R = Color.red(pixelColor);
+                G = Color.green(pixelColor);
+                B = Color.blue(pixelColor);
+                if(R>95&& G>40 && B>20 && 
+                (Math.max(Math.max(R,G),B)-Math.min(Math.min(R,G),B))>15 &&
+                (Math.abs(R-G))>15 && R>G && R>B)
+                {
+                    R=B=G=255;
+                }
+                else
+                {
+                    R=B=G=0;
+                }
+                bmOut.setPixel(x, y, Color.argb(A, R, G, B));
+            }
+        }
+        return bmOut;
+    }
+
+
+
+
+\end{lstlisting}
+
+
+\subsubsection{Rezultat}
+\begin{center}
+    \centering
+    \includegraphics[scale=0.8]{res/skora1.png}
+    \\Obrazek po zastosowaniu wykrywania skory algorytmem pierwszym
+    \label{simulationfigure}
+\end{center}
+
+\begin{center}
+    \centering
+    \includegraphics[scale=0.8]{res/skora2.png}
+    \\Obrazek po zastosowaniu wykrywania skory algorytmem drugim
+    \label{simulationfigure}
+\end{center}
+
+\section{Wnioski}
+Aplikacja wykonuje wszystkie operacje poprawnie. 
+
+
+\addcontentsline{toc}{section}{Literatura}
+\begin{thebibliography}{9}
+
+\bibitem{Simpson} 
+\url{misztal.edu.pl}
+\end{thebibliography}
+\end{document}

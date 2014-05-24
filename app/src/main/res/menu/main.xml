@@ -1,0 +1,141 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<item
+    android:id="@+id/negatyw"
+    android:orderInCategory="1"
+    android:title ="@string/negatyw"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+</item>
+<item
+    android:id="@+id/grey"
+    android:orderInCategory="2"
+    android:title ="@string/grey"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+</item>
+<item
+    android:id ="@+id/sepia"
+    android:orderInCategory="3"
+    android:title ="@string/sepia"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+    <menu>
+        <item
+            android:id ="@+id/sepia20"
+            android:orderInCategory="4"
+            android:title = "W = 20"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent">
+         </item>
+        <item
+            android:id ="@+id/sepia40"
+            android:orderInCategory="5"
+            android:title = "W = 40"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent">
+         </item>
+    </menu>
+</item>
+<item
+    android:id ="@+id/roberts"
+    android:orderInCategory="6"
+    android:title ="@string/roberts"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+</item>
+<item
+     android:id="@+id/wykrywanie1"
+     android:orderInCategory="2"
+     android:title="Wykrywanie Skory 1"
+     android:layout_height="match_parent"
+     android:layout_width="match_parent">
+</item>
+<item
+      android:id="@+id/wykrywanie2"
+      android:orderInCategory="2"
+      android:title="Wykrywanie Skory 2"
+      android:layout_height="match_parent"
+      android:layout_width="match_parent">
+</item>
+<item
+     android:id ="@+id/sobel"
+     android:orderInCategory="7"
+     android:title ="@string/sobel"
+     android:layout_height="match_parent"
+     android:layout_width="match_parent">
+</item>
+
+<item
+    android:id ="@+id/histo"
+    android:orderInCategory="8"
+    android:title ="@string/histogram"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+        <menu>
+            <item
+                android:id ="@+id/histokol"
+                android:orderInCategory="9"
+                android:title ="@string/histokol"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent">
+            </item>
+            <item
+                android:id ="@+id/histogrey"
+                android:orderInCategory="10"
+                android:layout_height="match_parent"
+                android:title ="@string/histogrey"
+                android:layout_width="match_parent">
+            </item>
+        </menu>
+</item>
+
+    <item
+        android:id ="@+id/wczytanie"
+        android:orderInCategory="11"
+        android:title ="@string/wczytaj"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+        <menu>
+            <item
+                android:id ="@+id/tucan"
+                android:orderInCategory="12"
+                android:title ="@string/tucano"
+                android:icon="@drawable/tucano"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent">
+            </item>
+            <item
+                android:id ="@+id/lenna1"
+                android:orderInCategory="13"
+                android:title = "@string/lenna"
+                android:icon="@drawable/lenna"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent">
+            </item>
+            <item
+                android:id ="@+id/kot"
+                android:orderInCategory="14"
+                android:title ="@string/kot"
+                android:icon = "@drawable/kot"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent">
+            </item>
+            <item
+                android:id ="@+id/stwor"
+                android:orderInCategory="15"
+                android:icon="@drawable/obrazek"
+                android:title ="@string/stwor"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent">
+            </item>
+            <item
+                android:id ="@+id/kobieta1"
+                android:orderInCategory="13"
+                android:title = "Kobieta"
+                android:icon="@drawable/kobieta"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent">
+            </item>
+        </menu>
+    </item>
+</menu>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Operacje na Obrazach</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="negatyw">Negatyw</string>
+    <string name="lenna">Lenna</string>
+    <string name="tucano">Tukan</string>
+    <string name="kot">Kot</string>
+    <string name="stwor">Stwor</string>
+    <string name="oryginal">Przywróć oryginał</string>
+    <string name="sepia">Sepia</string>
+    <string name="roberts">Filtr Robertsa</string>
+    <string name="sobel">Filtr Sobela</string>
+    <string name="grey">Odcienie szarosci</string>
+    <string name="histogram">Wyrównanie histogramu</string>
+    <string name="histokol">Obraz kolorowy</string>
+    <string name="histogrey">Obraz w odcieniach szarosci</string>
+    <string name="help">Opis funkcji</string>
+    <string name="wczytaj">Wczytaj inny obraz</string>
+
+    <string name="title_activity_help">Pomoc</string>
+    <string name="opis">
+    <b>Negatyw </b>- operacja polegającu na odwróceniu kolorów.\n\n
+    <b>Odcienie Szarosci </b> - Odcień szarości obrazu. Kazdy kanał R G i B zsumowany i podzielony przez 3\n\n
+    <b>Sepia </b>-Jest to operacja polegająca zmiękczeniu kolorów symulującym stare pożółkłe fotografie.W zależności od współczynnika W zmienia się intensywności operacji\n\n
+    <b>Filtr Robertsa</b>-Jest to jeden z pierwszych detektorów krawędzi. Krawędź wyznaczana jest jako maksimum pierwszej pochodnej. Gradient jest wektorem, który jest aproksymowany przez róźnice skończone:\n\n
+    <b>Filtr Sobela</b>-Krawędź widziana jest tutaj także jako maksimum gradientu. Aby zmniejszyć wpływ szumu uśrednia się wartości w pionie (przy gradiencie poziomym) i w poziomie (przy gradiencie pionowym) z większymi wagami przyłożonymi dla kierunku przechodzącego przez analizowany punkt. \n\n
+    <b>Normalizacja histogramu</b> Wyrównywanie histogramu polega na takiej zmianie wartości punktów obrazu aby w równych przedziałach histogramu ilość punktów obrazu była w przybliżeniu taka sama. Operacja ta pozwala na uwypuklenie mało kontrastowych szczegółów w obrazie. \n\n
+
+
+    </string>
+
+
+</resources>

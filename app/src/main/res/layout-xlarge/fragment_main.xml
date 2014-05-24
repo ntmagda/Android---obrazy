@@ -1,0 +1,77 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.example.app.MainActivity$PlaceholderFragment"
+    android:background="#ffe93d"
+    android:focusable="false">
+
+    <ImageView
+        android:layout_width="500dp"
+        android:layout_height="1000dp"
+        android:id="@+id/imageView"
+        android:src="@drawable/tucano"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:text="@string/oryginal"
+        android:id="@+id/oryginal"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:onClick="Oryginal"
+        android:layout_alignParentStart="false"
+        android:textSize="30dp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/kotim"
+        android:layout_below="@+id/imageView"
+        android:layout_toLeftOf="@+id/oryginal"
+        android:visibility="invisible"
+        android:src="@drawable/kot" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lennaim"
+        android:layout_above="@+id/oryginal"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:visibility="invisible"
+        android:src="@drawable/lenna" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lennaim"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:visibility="invisible"
+        android:src="@drawable/obrazek"
+        android:id="@+id/stworim"
+        android:focusableInTouchMode="false" />
+
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:text="@string/help"
+        android:id="@+id/help"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:onClick="Help"
+        android:textSize="30dp" />
+
+
+</RelativeLayout>

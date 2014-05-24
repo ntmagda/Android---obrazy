@@ -1,0 +1,16 @@
+\contentsline {section}{\numberline {1}Temat zadania}{2}
+\contentsline {section}{\numberline {2}Proponowane rozwizanie}{2}
+\contentsline {subsection}{\numberline {2.1}Krok 1: nazwa Metody I}{2}
+\contentsline {subsubsection}{\numberline {2.1.1}Czynnoci}{2}
+\contentsline {subsubsection}{\numberline {2.1.2}Rezultat}{3}
+\contentsline {subsection}{\numberline {2.2}Krok 2: nazwa metody}{3}
+\contentsline {subsubsection}{\numberline {2.2.1}Czynnoci}{3}
+\contentsline {subsubsection}{\numberline {2.2.2}Rezultat}{3}
+\contentsline {subsection}{\numberline {2.3}Krok 3: nazwa metody}{3}
+\contentsline {subsubsection}{\numberline {2.3.1}Czynnoci}{3}
+\contentsline {subsubsection}{\numberline {2.3.2}Rezultat}{3}
+\contentsline {subsection}{\numberline {2.4}Krok 4: nazwa metody}{3}
+\contentsline {subsubsection}{\numberline {2.4.1}Czynnoci}{3}
+\contentsline {subsubsection}{\numberline {2.4.2}Rezultat}{3}
+\contentsline {section}{\numberline {3}Wnioski}{3}
+\contentsline {section}{Literatura}{4}
